@@ -7,16 +7,7 @@
   <body>
     <div class="container-fluid">
       <div class="d-flex flex-column align-items-center justify-content-center w-100" style="height:100vh;">
-        <h1>Authentification</h1>
-        <div class="d-flex flex-row">
-          <% if (user) { %>
-            <a href="/auth/signout" class="mx-3">Déconnexion</a>
-            <a href="/protected" class="mx-3">Protected</a>
-          <% } else { %>
-            <a href="/auth/signin/form" class="mx-3">Connexion</a>
-          <a href="/users/new" class="mx-3">Inscription</a>
-          <% } %>
-        </div>
+        <h1>Protected</h1>
       </div>
     </div>
   </body>
