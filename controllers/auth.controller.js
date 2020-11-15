@@ -24,7 +24,7 @@ exports.sessionNew = (req, res, next) => {
   
   exports.googleAuth = (req, res, next) => {
     passport.authenticate('google', {
-      scope:'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile'
+      scope: ['email', 'profile']
     })(req, res, next);
   }
   
