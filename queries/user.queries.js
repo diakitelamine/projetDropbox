@@ -1,4 +1,6 @@
 const User=require('../database/models/user.model');
+
+
 exports.createUser = async(body)=>{
 
     try {
@@ -19,3 +21,11 @@ exports.createUser = async(body)=>{
     }
    
 }
+
+exports.findUserPerEmail= (email)=>{
+    return User.findOne({'local.email': email}).exec();
+}
+
+exports.findUserPerGoogleId = (googleId) => {
+    return User.findOne({ 'local.googleId': googleId }).exec();
+  }
