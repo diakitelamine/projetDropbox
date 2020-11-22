@@ -2,44 +2,44 @@ import React, { useState, useEffect } from 'react';
 import authSvg from '../assests/reset.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-const ResetPassword = ({match}) => {
+const ResetPassword = ({ match }) => {
   const [formData, setFormData] = useState({
-      password1: '',
-      password2: '',
-      token: '',
+    password1: '',
+    password2: '',
+    token: '',
     textChange: 'Submit'
   });
-    const { password1, password2, textChange, token } = formData;
-    
-    useEffect(() => {
-        let token = match.params.token
-        if(token) {
-            setFormData({...formData, token,})
-        }
-        
-    }, [])
+  const { password1, password2, textChange, token } = formData;
+
+  useEffect(() => {
+    let token = match.params.token
+    if (token) {
+      setFormData({ ...formData, token, })
+    }
+
+  }, [])
   const handleChange = text => e => {
     setFormData({ ...formData, [text]: e.target.value });
   };
-    const handleSubmit = e => {
-      console.log(password1, password2)
+  const handleSubmit = e => {
+    console.log(password1, password2)
     e.preventDefault();
     if ((password1 === password2) && password1 && password2) {
       setFormData({ ...formData, textChange: 'Submitting' });
       axios
         .put(`${process.env.REACT_APP_API_URL}/resetpassword`, {
-            newPassword: password1,
-            resetPasswordLink: token
+          newPassword: password1,
+          resetPasswordLink: token
         })
         .then(res => {
           console.log(res.data.message)
-            setFormData({
-              ...formData,
-               password1: '',
-              password2: ''
-            });
-            toast.success(res.data.message);
-          
+          setFormData({
+            ...formData,
+            password1: '',
+            password2: ''
+          });
+          toast.success(res.data.message);
+
         })
         .catch(err => {
           toast.error('Something is wrong try again');
@@ -55,10 +55,10 @@ const ResetPassword = ({match}) => {
         <div className='lg:w-1/2 xl:w-5/12 p-6 sm:p-12'>
           <div className='mt-12 flex flex-col items-center'>
             <h1 className='text-2xl xl:text-3xl font-extrabold'>
-              Reset Your Password
+              Réinitialisez votre mot de passe
             </h1>
             <div className='w-full flex-1 mt-8 text-indigo-500'>
-              
+
               <form
                 className='mx-auto max-w-xs relative '
                 onSubmit={handleSubmit}
@@ -69,8 +69,8 @@ const ResetPassword = ({match}) => {
                   placeholder='password'
                   onChange={handleChange('password1')}
                   value={password1}
-                  />
-                  <input
+                />
+                <input
                   className='w-full mt-5 px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white'
                   type='password'
                   placeholder='Confirm password'

@@ -11,7 +11,7 @@ const Login = ({ history }) => {
   const [formData, setFormData] = useState({
     email: '',
     password1: '',
-    textChange: 'Sign In'
+    textChange: 'Se connecter'
   });
   const { email, password1, textChange } = formData;
   const handleChange = text => e => {
@@ -92,7 +92,7 @@ const Login = ({ history }) => {
             ...formData,
             email: '',
             password1: '',
-            textChange: 'Sign In'
+            textChange: 'Se connecter'
           });
           console.log(err.response);
           toast.error(err.response.data.errors);
@@ -109,7 +109,7 @@ const Login = ({ history }) => {
         <div className='lg:w-1/2 xl:w-5/12 p-6 sm:p-12'>
           <div className='mt-12 flex flex-col items-center'>
             <h1 className='text-2xl xl:text-3xl font-extrabold'>
-              Sign In for Congar
+              Se connecter à DROPBOX
             </h1>
             <div className='w-full flex-1 mt-8 text-indigo-500'>
               <div className='flex flex-col items-center'>
@@ -127,7 +127,7 @@ const Login = ({ history }) => {
                       <div className=' p-2 rounded-full '>
                         <i className='fab fa-google ' />
                       </div>
-                      <span className='ml-4'>Sign In with Google</span>
+                      <span className='ml-4'>Connectez-vous avec Google</span>
                     </button>
                   )}
                 ></GoogleLogin>
@@ -143,7 +143,7 @@ const Login = ({ history }) => {
                       <div className=' p-2 rounded-full '>
                         <i className='fab fa-facebook' />
                       </div>
-                      <span className='ml-4'>Sign In with Facebook</span>
+                      <span className='ml-4'>Connectez-vous avec Facebook</span>
                     </button>
                   )}
                 />
@@ -155,12 +155,12 @@ const Login = ({ history }) => {
                   target='_self'
                 >
                   <i className='fas fa-user-plus fa 1x w-6  -ml-2 text-indigo-500' />
-                  <span className='ml-4'>Sign Up</span>
+                  <span className='ml-4'>S'inscrire</span>
                 </a>
               </div>
               <div className='my-12 border-b text-center'>
                 <div className='leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2'>
-                  Or sign In with e-mail
+                  Ou connectez-vous par e-mail
                 </div>
               </div>
               <form
@@ -186,7 +186,7 @@ const Login = ({ history }) => {
                   className='mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none'
                 >
                   <i className='fas fa-sign-in-alt  w-6  -ml-2' />
-                  <span className='ml-3'>Sign In</span>
+                  <span className='ml-3'>Se connecter</span>
                 </button>
                 <Link
                   to='/users/password/forget'

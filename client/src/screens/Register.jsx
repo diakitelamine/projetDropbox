@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import authSvg from '../assests/auth.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-import { authenticate, isAuth } from '../helpers/auth';
-import { Link, Redirect } from 'react-router-dom';
+import { isAuth } from '../helpers/auth';
+import { Redirect } from 'react-router-dom';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -11,7 +11,7 @@ const Register = () => {
     email: '',
     password1: '',
     password2: '',
-    textChange: 'Sign Up'
+    textChange: 'Sinscrire'
   });
 
   const { name, email, password1, password2, textChange } = formData;
@@ -69,7 +69,7 @@ const Register = () => {
         <div className='lg:w-1/2 xl:w-5/12 p-6 sm:p-12'>
           <div className='mt-12 flex flex-col items-center'>
             <h1 className='text-2xl xl:text-3xl font-extrabold'>
-              Sign Up for Congar
+              Inscrivez-vous à DROBOX
             </h1>
 
             <form
@@ -115,7 +115,7 @@ const Register = () => {
               </div>
               <div className='my-12 border-b text-center'>
                 <div className='leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2'>
-                  Or sign with email or social login
+                  Ou connectez-vous avec e-mail ou connexion sociale
                 </div>
               </div>
               <div className='flex flex-col items-center'>
@@ -126,7 +126,7 @@ const Register = () => {
                   target='_self'
                 >
                   <i className='fas fa-sign-in-alt fa 1x w-6  -ml-2 text-indigo-500' />
-                  <span className='ml-4'>Sign In</span>
+                  <span className='ml-4'>Se connecter</span>
                 </a>
               </div>
             </form>

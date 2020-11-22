@@ -1,5 +1,4 @@
 import cookie from 'js-cookie'
-import { GoogleLogout } from 'react-google-login';
 
 // Set in Cookie
 export const setCookie = (key, value) => {
@@ -7,7 +6,7 @@ export const setCookie = (key, value) => {
         cookie.set(key, value, {
             // 1 Day
             expires: 1
-        }) 
+        })
     }
 }
 // remove from cookie

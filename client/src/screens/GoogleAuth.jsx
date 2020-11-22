@@ -2,7 +2,7 @@ import React from 'react';
 import GoogleLogin from 'react-google-login';
 import axios from 'axios';
 
-const Google = ({ informParent = f => f , clientId, apiUrl}) => {
+const Google = ({ informParent = f => f, clientId, apiUrl }) => {
   console.log(clientId);
   const responseGoogle = response => {
     console.log(response);
@@ -35,7 +35,7 @@ const Google = ({ informParent = f => f , clientId, apiUrl}) => {
             <div className=' p-2 rounded-full '>
               <i className='fab fa-google ' />
             </div>
-            <span className='ml-4'>Sign In with Google</span>
+            <span className='ml-4'>Connectez-vous avec Google</span>
           </button>
         )}
         cookiePolicy={'single_host_origin'}
