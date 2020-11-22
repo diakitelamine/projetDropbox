@@ -3,8 +3,8 @@ import authSvg from '../assests/welcome.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
-import { authenticate, isAuth } from '../helpers/auth';
-import { Link, Redirect } from 'react-router-dom';
+import { isAuth } from '../helpers/auth';
+import { Redirect } from 'react-router-dom';
 
 const Activate = ({ match }) => {
   const [formData, setFormData] = useState({
@@ -23,7 +23,7 @@ const Activate = ({ match }) => {
 
     console.log(token, name);
   }, [match.params]);
-  const { name, token, show } = formData;
+  const { name, token } = formData;
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -41,7 +41,7 @@ const Activate = ({ match }) => {
         toast.success(res.data.message);
       })
       .catch(err => {
-        
+
         toast.error(err.response.data.errors);
       });
   };
@@ -67,12 +67,12 @@ const Activate = ({ match }) => {
                   className='mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none'
                 >
                   <i className='fas fa-user-plus fa 1x w-6  -ml-2' />
-                  <span className='ml-3'>Activate your Account</span>
+                  <span className='ml-3'>Activez votre compte</span>
                 </button>
               </div>
               <div className='my-12 border-b text-center'>
                 <div className='leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2'>
-                  Or sign up again
+                  Ou inscrivez-vous à nouveau
                 </div>
               </div>
               <div className='flex flex-col items-center'>
@@ -83,7 +83,7 @@ const Activate = ({ match }) => {
                   target='_self'
                 >
                   <i className='fas fa-sign-in-alt fa 1x w-6  -ml-2 text-indigo-500' />
-                  <span className='ml-4'>Sign Up</span>
+                  <span className='ml-4'>S'inscrire</span>
                 </a>
               </div>
             </form>
