@@ -136,7 +136,7 @@ const Admin = ({ history }) => {
                   href='/'
                   target='_self'
                 >
-                  <i className='fa fa-dropbox fa 1x w-6  -ml-2 text-indigo-500' />
+                  <i className='fas fa-sign-in-alt fa 1x w-6  -ml-2 text-indigo-500' />
                   <span className='ml-4'>Home</span>
                 </a>
               </div>

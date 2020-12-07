@@ -63,7 +63,7 @@ const Private = ({ history }) => {
       )
       .then(res => {
         updateUser(res, () => {
-          toast.success('Mise à jour du profil réussie');
+          toast.success('Profile Updated Successfully');
           setFormData({ ...formData, textChange: 'Update' });
         });
       })
@@ -79,7 +79,7 @@ const Private = ({ history }) => {
         <div className='lg:w-1/2 xl:w-5/12 p-6 sm:p-12'>
           <div className='mt-12 flex flex-col items-center'>
             <h1 className='text-2xl xl:text-3xl font-extrabold'>
-              Mise à jour du profile
+              Profile Update
             </h1>
 
             <form

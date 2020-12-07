@@ -10,7 +10,7 @@ const {
     resetPasswordController,
     googleController,
     facebookController
-} = require('../controllers/auth.controller')
+} = require("../controllers/auth.controller");
 
 
 const {
@@ -18,7 +18,7 @@ const {
     validLogin,
     forgotPasswordValidator,
     resetPasswordValidator
-} = require('../helpers/valid')
+} = require("../helpers/valid");
 
 router.post('/register',
     validSign,

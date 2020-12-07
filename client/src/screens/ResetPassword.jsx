@@ -9,7 +9,7 @@ const ResetPassword = ({ match }) => {
     token: '',
     textChange: 'Submit'
   });
-  const { password1, password2, textChange, token } = formData;
+  const { password1, password2, token } = formData;
 
   useEffect(() => {
     let token = match.params.token
@@ -55,7 +55,7 @@ const ResetPassword = ({ match }) => {
         <div className='lg:w-1/2 xl:w-5/12 p-6 sm:p-12'>
           <div className='mt-12 flex flex-col items-center'>
             <h1 className='text-2xl xl:text-3xl font-extrabold'>
-              Réinitialisez votre mot de passe
+              Reset Your Password
             </h1>
             <div className='w-full flex-1 mt-8 text-indigo-500'>
 
