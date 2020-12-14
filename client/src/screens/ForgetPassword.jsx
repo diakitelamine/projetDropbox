@@ -3,7 +3,7 @@ import authSvg from '../assests/forget.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 
-const ForgetPassword = ({ history }) => {
+const ForgetPassword = ({ }) => {
   const [formData, setFormData] = useState({
     email: '',
     textChange: 'Submit'

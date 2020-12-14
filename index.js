@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Use Routes
-app.use('/api/', authRouter)
+app.use('/api', authRouter)
 app.use('/api', userRouter)
 
 app.use((req, res) => {
