@@ -17,7 +17,7 @@ import MenuAppBar from './dom.js';
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path='/' exact render={props => <MenuAppBar {...props} />} />
+      <Route path='/' exact render={props => <MenuAppBar {...props}  to="/"/>} />
       <Route path='/login' exact render={props => <Login {...props} />} />
       <Route path='/register' exact render={props => <Register {...props} />} />
       <Route path='/users/password/forget' exact render={props => <ForgetPassword {...props} />} />

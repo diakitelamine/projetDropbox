@@ -14,7 +14,7 @@ const Private = ({ history }) => {
   });
 
   useEffect(() => {
-    loadProfile();
+    this.loadProfile();
   }, []);
 
   const loadProfile = () => {
