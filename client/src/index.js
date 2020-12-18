@@ -13,11 +13,13 @@ import ResetPassword from './screens/ResetPassword.jsx';
 import PrivateRoute from './Routes/PrivateRoute';
 import AdminRoute from './Routes/AdminRoute';
 import 'react-toastify/dist/ReactToastify.css';
+import MenuAppBar from './dom.js';
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path='/' exact render={props => <App {...props} />} />
-      <Route path='/login' exact render={props => <Login {...props} />} />
+      
+      <Route path='/login' exact render={props => <MenuAppBar {...props} />} />
       <Route path='/register' exact render={props => <Register {...props} />} />
       <Route path='/users/password/forget' exact render={props => <ForgetPassword {...props} />} />
       <Route path='/users/password/reset/:token' exact render={props => <ResetPassword {...props} />} />
