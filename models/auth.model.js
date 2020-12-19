@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 // user schema
-const userScheama = new mongoose.Schema(
+const userScheama = mongoose.Schema(
     {
         email: {
             type: String,
