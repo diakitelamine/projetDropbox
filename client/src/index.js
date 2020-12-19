@@ -14,10 +14,17 @@ import PrivateRoute from './Routes/PrivateRoute';
 import AdminRoute from './Routes/AdminRoute';
 import 'react-toastify/dist/ReactToastify.css';
 import MenuAppBar from './dom.js';
+import AppRouter from './Routes/AppRouter.js';
+import './styles.scss';
+
+
+
+
 ReactDOM.render(
   <BrowserRouter>
-    <Switch>
-      <Route path='/' exact render={props => <MenuAppBar {...props}  to="/"/>} />
+    <Switch> 
+      <Route path='/' exact render={props => <AppRouter {...props}  to="/"/>} />
+      {/* <Route path='/' exact render={props => <MenuAppBar {...props}  to="/"/>} /> */}
       <Route path='/login' exact render={props => <Login {...props} />} />
       <Route path='/register' exact render={props => <Register {...props} />} />
       <Route path='/users/password/forget' exact render={props => <ForgetPassword {...props} />} />
