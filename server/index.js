@@ -1,48 +1,51 @@
-const express = require('express');
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const config = require("./config/key");
+const mongoose = require("mongoose");
 const morgan = require('morgan')
 const path = require('path');
 require = require('esm')(module)
 const fileRoute = require('./routes/file');
+// Connect to MongoDB
+mongoose
+  .connect(config.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  })
+  .then(() => console.log(`MongoDB Connected...`))
+  .catch((err) => console.log(err));
 
-require('./config/db');
-const bodyParser = require('body-parser')
-const cors = require('cors')
-// Config dotev
-require('dotenv').config({
-    path: './config/config.env'
-})
-const app = express();
+// Middleware
+// 1. application/x-www-form-urlencoded 
+// 2. application-json 
+// 3. cookie 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser());
 
-// body parser
-app.use(bodyParser.json())
-// Load routes
+// Router
+const userRouter = require("./routes/user");
 
-const authRouter = require('./routes/auth.route')
-const userRouter = require('./routes/user.route');
-module.exports = require('./config/config')
-const { NODE_ENV, CLIENT_URL } = require('./config/config');
-// Use Routes
-app.use('/api', authRouter);
-app.use('/api', userRouter);
+app.use("/api/users", userRouter);
 
-// Dev Logginf Middleware
-if (NODE_ENV === 'development') {
-  app.use(cors({
-      origin: CLIENT_URL
-  }))
-  app.use(morgan('dev'))
+// Serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("client/build"));
+  app.use(express.static(path.join(__dirname, '..', 'build')));
+
+  app.use('/api', fileRoute);
+  // index.html for all page routes
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
+  });
 }
 
-
-
-
-app.use(express.static(path.join(__dirname, '..', 'build')));
-app.use('/api', fileRoute);
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
-});
-
-app.listen(3030, () => {
-  console.log('server started on port 3030');
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log(`Server Running on port: ${port}`);
 });
