@@ -2,7 +2,8 @@ import axios from 'axios';
 import {
     LOGIN_USER,
     REGISTER_USER,
-    AUTH_USER
+    AUTH_USER,
+    LOADDER_FILE
 } from './types';
 
 export function loginUser(dataToSubmit) {
@@ -34,6 +35,18 @@ export function auth() {
 
     return {
         type: AUTH_USER,
+        payload: request
+    }
+}
+
+
+export function load() {
+
+    const request = axios.get('/api/')
+        .then(response => response.data )
+
+    return {
+        type: LOADDER_FILE,
         payload: request
     }
 }

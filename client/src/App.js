@@ -8,6 +8,12 @@ import RegisterPage from "./components/RegisterPage/RegisterPage";
 import ForgotPasswordPage from "./components/FindPasswordPage/ForgotPasswordPage";
 import ResetPasswordPage from "./components/FindPasswordPage/ResetPasswordPage";
 import Auth from "./hoc/auth";
+import AppRouter from "./Routes/AppRouter";
+import 'react-toastify/dist/ReactToastify.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.scss';
+
+
 
 export default function App() {
   return (
@@ -16,7 +22,8 @@ export default function App() {
         <Header />
         {}
         <Switch>
-          <Route exact path="/" component={Auth(LandingPage, null)} />
+          <Route path='/' exact render={props => <AppRouter {...props}  to="/"/>} />
+          {/* <Route exact path="/" component={Auth(AppRouter, null)} /> */}
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route

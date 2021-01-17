@@ -88,7 +88,7 @@ function Header(props) {
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <a href="/" style={{ color: "white", textDecoration: "none" }}>
+            <a href="http://localhost:3000/api/file" style={{ color: "white", textDecoration: "none" }}>
               Dropbox
             </a>
           </Typography>

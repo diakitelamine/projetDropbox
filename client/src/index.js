@@ -11,6 +11,8 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import "./index.css";
 
+
+
 // set default Typography font of Material UI
 const theme = createMuiTheme({
   typography: {
