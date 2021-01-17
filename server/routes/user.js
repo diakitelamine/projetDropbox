@@ -123,7 +123,7 @@ router.post("/forgot", (req, res) => {
         secure: true,
         auth: {
           user: 'diakitelamine555@gmail.com',
-          pass: 'lamine666205294',
+          pass: 'la',
         },
       });
 
