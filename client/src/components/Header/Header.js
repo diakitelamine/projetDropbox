@@ -88,7 +88,7 @@ function Header(props) {
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <a href="http://localhost:3000/api/file" style={{ color: "white", textDecoration: "none" }}>
+            <a href="/" style={{ color: "white", textDecoration: "none" }}>
               Dropbox
             </a>
           </Typography>
@@ -144,7 +144,7 @@ function Header(props) {
                 open={openMypage}
                 onClose={handleCloseMypage}
               >
-                <MenuItem onClick={handleCloseMypage}>Ma page</MenuItem>
+                <MenuItem onClick={handleCloseMypage}>Mon compte </MenuItem>
                 <MenuItem onClick={handleLogout}>Se déconnecter</MenuItem>
               </Menu>
             </div>

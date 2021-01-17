@@ -11,7 +11,9 @@ function LandingPage(props) {
 }
 
 const Title = styled.h1`
-  text-align: center;
+  text-align: center
+;
+
 `;
 
 export default LandingPage;

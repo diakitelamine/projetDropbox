@@ -1,7 +1,7 @@
 {
-  "name": "boiler-plate",
+  "name": "dropbox",
   "version": "1.0.0",
-  "description": "React boiler-plate",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
@@ -9,7 +9,7 @@
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\""
   },
-  "author": "Sungpyo Cho",
+  "author": "lamine",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
