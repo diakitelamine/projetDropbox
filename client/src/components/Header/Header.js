@@ -144,7 +144,7 @@ function Header(props) {
                 open={openMypage}
                 onClose={handleCloseMypage}
               >
-                <MenuItem onClick={handleCloseMypage}>Ma page</MenuItem>
+                <MenuItem onClick={handleCloseMypage}>Mon compte </MenuItem>
                 <MenuItem onClick={handleLogout}>Se déconnecter</MenuItem>
               </Menu>
             </div>

@@ -1,7 +1,7 @@
 {
-  "name": "boiler-plate",
+  "name": "dropbox",
   "version": "1.0.0",
-  "description": "React boiler-plate",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
@@ -9,11 +9,12 @@
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\""
   },
-  "author": "Sungpyo Cho",
+  "author": "lamine",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.3",
     "concurrently": "^5.2.0",
     "cookie-parser": "^1.4.5",
     "esm": "^3.2.25",
@@ -28,6 +29,7 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "sass": "^1.32.4"
   }
 }

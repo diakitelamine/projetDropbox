@@ -31,18 +31,18 @@ app.use(cookieParser());
 const userRouter = require("./routes/user");
 
 app.use("/api/users", userRouter);
+app.use(fileRoute); 
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
   // Set static folder
   app.use(express.static("client/build"));
+
   app.use(express.static(path.join(__dirname, '..', 'build')));
 
-  app.use('/api', fileRoute);
-  // index.html for all page routes
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
-  });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client', 'build', 'index.html'));
+});
 }
 
 const port = process.env.PORT || 5000;

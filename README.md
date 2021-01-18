@@ -2,7 +2,6 @@
 
 ## Features
 
-- Simple boilerplate to develop a MERN app
   - What is MERN Stack?
   - Mongo DB + Express.js + React.js + Node.js
 - Register / login / logout / find & reset password

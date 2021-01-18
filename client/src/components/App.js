@@ -112,7 +112,7 @@ const App = (props) => {
             {({ getRootProps, getInputProps }) => (
               <div {...getRootProps({ className: 'drop-zone' })} ref={dropRef}>
                 <input {...getInputProps()} />
-                <p>Drag and drop a file OR click here to select a file</p>
+                <p>Selectionner un fichier</p>
                 {file && (
                   <div>
                     <strong>Selected file:</strong> {file.name}
@@ -133,7 +133,8 @@ const App = (props) => {
             )
           ) : (
             <div className="preview-message">
-              <p>Image preview will be shown here after selection</p>
+              <p>
+                 L'aperçu de l'image après la sélection</p>
             </div>
           )}
         </div>
